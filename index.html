@@ -81,9 +81,9 @@
             justify-items: center;
         }
         .event-link {
-            text-decoration: none; /* Remove underline from link */
-            color: inherit; /* Inherit text color */
-            display: block; /* Full clickable area */
+            text-decoration: none;
+            color: inherit;
+            display: block;
             width: 100%;
         }
         .event {
@@ -132,7 +132,7 @@
         }
         @media (min-width: 768px) {
             .events-grid {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+                grid-template-columns: repeat(3, 1fr);
             }
             h1 {
                 font-size: 2.5em;
@@ -157,7 +157,6 @@
             img.logo {
                 max-width: 35%;
             }
-            /* iOS keeps auto-fit grid */
         }
     </style>
 </head>
@@ -171,6 +170,9 @@
         </a>
         <a href="contact.html">
             <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="photos.html">
+            <i class="fas fa-camera"></i> Photos
         </a>
     </div>
     <div class="events">
@@ -202,7 +204,7 @@
                         const eventLink = document.createElement('a');
                         eventLink.className = 'event-link';
                         eventLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}`;
-                        eventLink.target = '_blank'; // Open in new tab
+                        eventLink.target = '_blank';
                         eventLink.appendChild(eventDiv);
                         eventsList.appendChild(eventLink);
                     });
