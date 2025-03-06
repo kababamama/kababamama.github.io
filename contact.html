@@ -33,7 +33,7 @@
             display: inline-block;
         }
         img.logo {
-            max-width: 25%; /* Matches index.html base mobile size */
+            max-width: 25%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -42,10 +42,10 @@
         .contact {
             margin: 20px auto;
             max-width: 800px;
-            padding: 0 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 20px 40px; /* Increased bottom padding from 0px to 40px */
+            background-color: rgba(255, 255, 255, 0.6); /* More translucent */
+            border-radius: 12px; /* Softer corners */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer, prettier shadow */
         }
         .contact h1 {
             font-family: 'Montserrat', sans-serif;
@@ -89,13 +89,12 @@
         }
         @media (min-width: 768px) {
             img.logo {
-                max-width: 30%; /* Matches index.html desktop size */
+                max-width: 30%;
             }
         }
-        /* iOS-specific adjustment to match index.html */
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
             img.logo {
-                max-width: 30%; /* Matches index.html iOS mobile size (20% bigger than 25%) */
+                max-width: 30%;
             }
         }
     </style>
