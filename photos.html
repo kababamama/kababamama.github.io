@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .gallery img {
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <div class="gallery">
+        <img src="image1.png" alt="Photo 1">
+        <img src="image2.png" alt="Photo 2">
+        <img src="image3.png" alt="Photo 3">
+    </div>
+    <a href="index.html">Back to Home</a>
+</body>
+</html>
