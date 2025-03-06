@@ -16,7 +16,7 @@
             padding: 30px 0;
         }
         img {
-            max-width: 80%;
+            max-width: 80%; /* Default for mobile (iPhone OS) */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -24,12 +24,12 @@
         .events {
             margin: 40px auto;
             max-width: 1200px;
-            padding: 0 10px; /* Reduced padding for mobile */
+            padding: 0 10px;
         }
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller min width for side-by-side */
-            gap: 15px; /* Smaller gap for mobile */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             width: 100%;
             justify-items: center;
         }
@@ -38,24 +38,24 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 15px; /* Slightly less padding */
+            padding: 15px;
             text-align: left;
             transition: transform 0.2s;
             width: 100%;
             box-sizing: border-box;
-            min-height: 180px; /* Adjusted for content */
+            min-height: 180px;
         }
         .event:hover {
             transform: translateY(-5px);
         }
         h1 {
-            font-size: 2em; /* Smaller on mobile */
+            font-size: 2em;
             color: #333;
             margin-bottom: 20px;
             font-weight: 700;
         }
         .event p {
-            font-size: 0.95em; /* Slightly smaller for mobile */
+            font-size: 0.95em;
             color: #555;
             margin: 5px 0;
         }
@@ -74,16 +74,26 @@
         a:hover {
             text-decoration: underline;
         }
-        /* Media query for larger screens */
+        /* Desktop adjustments */
         @media (min-width: 768px) {
             .events-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Wider on desktop */
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards */
             }
             h1 {
                 font-size: 2.5em;
             }
             .event p {
-                font-size: 1.1em;
+                font-size: 1em;
+            }
+            .event p.location,
+            .event p.address {
+                white-space: nowrap; /* No wrapping */
+                overflow: hidden;
+                text-overflow: ellipsis; /* Ellipsis if too long */
+                display: block; /* Ensure full line */
+            }
+            img {
+                max-width: 95%; /* Even bigger logo on desktop */
             }
         }
     </style>
@@ -112,8 +122,8 @@
                     eventDiv.className = 'event';
                     eventDiv.innerHTML = `
                         <p><strong>Date:</strong> ${event.date}</p>
-                        <p><strong>Location:</strong> ${event.location}</p>
-                        <p><strong>Address:</strong> ${event.address}</p>
+                        <p class="location"><strong>Location:</strong> ${event.location}</p>
+                        <p class="address"><strong>Address:</strong> ${event.address}</p>
                         <p><strong>Time:</strong> ${event.time}</p>
                     `;
                     eventsList.appendChild(eventDiv);
