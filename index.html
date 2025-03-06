@@ -10,9 +10,20 @@
             font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background: url('sunset.png') no-repeat center center fixed; /* Updated to sunset.png */
+            background-size: cover;
             text-align: center;
             line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85); /* Very light white overlay */
+            z-index: -1; /* Behind content */
         }
         .logo-container {
             padding: 0;
@@ -24,7 +35,7 @@
             margin: 0 auto;
         }
         .links {
-            margin: 10px 0; /* Small spacing above and below links */
+            margin: 10px 0;
         }
         .links a {
             color: #FF0000;
@@ -63,7 +74,7 @@
             justify-items: center;
         }
         .event {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white for readability */
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
