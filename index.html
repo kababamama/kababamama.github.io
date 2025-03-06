@@ -34,7 +34,7 @@
             display: inline-block;
         }
         img.logo {
-            max-width: 25%; /* Base size for mobile */
+            max-width: 25%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -75,7 +75,7 @@
         }
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mobile/iOS default */
             gap: 15px;
             width: 100%;
             justify-items: center;
@@ -126,7 +126,7 @@
         }
         @media (min-width: 768px) {
             .events-grid {
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
             }
             h1 {
                 font-size: 2.5em;
@@ -141,17 +141,17 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 30%; /* Base size for desktop */
+                max-width: 30%;
             }
         }
-        /* iOS-specific adjustments */
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
             .events h1 {
                 font-size: 2em;
             }
             img.logo {
-                max-width: 35%; /* Bigger on iOS */
+                max-width: 35%;
             }
+            /* iOS keeps auto-fit grid, no change */
         }
     </style>
 </head>
@@ -161,7 +161,7 @@
     </div>
     <div class="links">
         <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
+            <i class="fab fa-instagram"></i> Follow me on Instagram
         </a>
         <a href="contact.html">
             <i class="fas fa-envelope"></i> Contact Us
