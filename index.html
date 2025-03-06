@@ -4,43 +4,48 @@
     <title>Kababa Mama Hawaii</title>
     <style>
         body {
-            font-family: 'Helvetica', Arial, sans-serif; /* Clean, professional font */
+            font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff; /* White background */
+            background-color: #ffffff;
             text-align: center;
             line-height: 1.6;
         }
         .logo-container {
-            padding: 30px 0; /* More padding for logo */
+            padding: 30px 0;
         }
         img {
-            max-width: 80%; /* Large logo, fits page width */
+            max-width: 80%;
             height: auto;
             display: block;
             margin: 0 auto;
         }
         .events {
             margin: 40px auto;
-            max-width: 1200px; /* Wide container for cards */
-            padding: 0 20px; /* Side padding */
+            max-width: 1200px;
+            padding: 0 20px;
         }
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-            gap: 25px; /* Space between cards */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            justify-items: center;
         }
         .event {
-            background-color: #fff; /* White card background */
-            border: 1px solid #ddd; /* Light gray border */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: left;
-            transition: transform 0.2s; /* Hover effect */
+            transition: transform 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 200px; /* Increased height for address */
         }
         .event:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
+            transform: translateY(-5px);
         }
         h1 {
             font-size: 2.5em;
@@ -49,18 +54,18 @@
             font-weight: 700;
         }
         .event p {
-            font-size: 1.1em;
+            font-size: 1em; /* Slightly smaller for more content */
             color: #555;
-            margin: 8px 0;
+            margin: 6px 0;
         }
         .event p strong {
-            color: #222; /* Darker for emphasis */
+            color: #222;
         }
         .instagram-link {
             margin: 40px 0;
         }
         a {
-            color: #FF0000; /* Red for Instagram link */
+            color: #FF0000;
             text-decoration: none;
             font-size: 1.3em;
             font-weight: 500;
@@ -76,7 +81,7 @@
     </div>
     <div class="events">
         <h1>Upcoming Events</h1>
-        <div id="events-list" class="events-grid"></div> <!-- Event cards -->
+        <div id="events-list" class="events-grid"></div>
     </div>
     <div class="instagram-link">
         <a href="https://www.instagram.com/yourusername" target="_blank">Follow me on Instagram</a>
@@ -88,12 +93,14 @@
             .then(response => response.json())
             .then(events => {
                 const eventsList = document.getElementById('events-list');
+                eventsList.innerHTML = ''; // Clear existing events
                 events.forEach(event => {
                     const eventDiv = document.createElement('div');
                     eventDiv.className = 'event';
                     eventDiv.innerHTML = `
                         <p><strong>Date:</strong> ${event.date}</p>
                         <p><strong>Location:</strong> ${event.location}</p>
+                        <p><strong>Address:</strong> ${event.address}</p>
                         <p><strong>Time:</strong> ${event.time}</p>
                     `;
                     eventsList.appendChild(eventDiv);
