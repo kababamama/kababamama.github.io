@@ -27,23 +27,25 @@
             z-index: -1;
         }
         .logo-container {
-            padding: 15px 0;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
         }
         .logo-container a {
             display: inline-block;
-            border: 2px solid #FF0000; /* Red circular frame */
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .logo-container a:hover {
+            transform: scale(1.1); /* Slight enlarge on hover */
         }
         img.logo {
-            max-width: 25%;
+            max-width: 15%; /* Smaller for badge */
             height: auto;
             display: block;
-            border-radius: 50%; /* Circular image */
         }
         .links {
-            margin: 10px 0;
+            margin: 20px 0;
         }
         .links a {
             color: #FF0000;
@@ -61,7 +63,7 @@
             margin-right: 5px;
         }
         .events {
-            margin: 0 auto;
+            margin: 20px auto;
             max-width: 1200px;
             padding: 0 10px;
         }
@@ -143,7 +145,7 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 30%;
+                max-width: 20%;
             }
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
@@ -151,7 +153,7 @@
                 font-size: 2em;
             }
             img.logo {
-                max-width: 30%;
+                max-width: 20%;
             }
         }
     </style>
