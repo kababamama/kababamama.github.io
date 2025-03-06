@@ -26,6 +26,20 @@
             background: rgba(255, 255, 255, 0.85);
             z-index: -1;
         }
+        .logo-container {
+            padding: 5px 0;
+            background: none;
+        }
+        .logo-container a {
+            display: inline-block;
+        }
+        img.logo {
+            max-width: 25%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            background: transparent;
+        }
         h1 {
             font-family: 'Montserrat', sans-serif;
             color: #000000;
@@ -99,9 +113,22 @@
         .close:hover {
             color: #FF0000;
         }
+        @media (min-width: 768px) {
+            img.logo {
+                max-width: 30%;
+            }
+        }
+        @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
+            img.logo {
+                max-width: 35%;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="logo-container">
+        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
+    </div>
     <h1>Photo Gallery</h1>
     <div class="gallery">
         <img src="image1.png" alt="Photo 1">
@@ -119,7 +146,7 @@
 
     <!-- Modal for expanded photo -->
     <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModal()">×</span>
         <img class="modal-content" id="expandedPhoto">
     </div>
 
@@ -136,7 +163,6 @@
             modal.style.display = 'none';
         }
 
-        // Close modal when clicking outside the image
         window.onclick = function(event) {
             const modal = document.getElementById('photoModal');
             if (event.target === modal) {
