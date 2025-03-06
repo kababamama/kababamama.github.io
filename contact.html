@@ -10,7 +10,7 @@
             font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('sunset.png') no-repeat center center fixed; /* Updated to sunset.png */
+            background: url('sunset.png') no-repeat center center fixed;
             background-size: cover;
             text-align: center;
             line-height: 1.6;
@@ -27,18 +27,23 @@
         }
         .logo-container {
             padding: 5px 0;
+            background: none; /* Ensure no background interferes */
+        }
+        .logo-container a {
+            display: inline-block; /* Prevents extra spacing */
         }
         img {
             max-width: 80%;
             height: auto;
             display: block;
             margin: 0 auto;
+            background: transparent; /* Remove any white box from logo */
         }
         .contact {
             margin: 20px auto;
             max-width: 800px;
             padding: 0 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white for readability */
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -91,7 +96,7 @@
 </head>
 <body>
     <div class="logo-container">
-        <a href="index.html"><img src="logo1.png" alt="Kababa Mama Logo"></a>
+        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo"></a>
     </div>
     <div class="contact">
         <h1>Contact Us</h1>
