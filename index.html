@@ -4,55 +4,66 @@
     <title>Kababa Mama Hawaii</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica', Arial, sans-serif; /* Clean, professional font */
             margin: 0;
             padding: 0;
             background-color: #ffffff; /* White background */
             text-align: center;
+            line-height: 1.6;
         }
         .logo-container {
-            padding: 20px;
+            padding: 30px 0; /* More padding for logo */
         }
         img {
             max-width: 80%; /* Large logo, fits page width */
             height: auto;
             display: block;
-            margin: 0 auto; /* Center logo */
+            margin: 0 auto;
         }
         .events {
             margin: 40px auto;
-            max-width: 1000px; /* Wider for grid */
+            max-width: 1200px; /* Wide container for cards */
+            padding: 0 20px; /* Side padding */
         }
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-            gap: 20px; /* Space between squares */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 25px; /* Space between cards */
         }
         .event {
-            border: 2px solid #000000; /* Black border */
-            padding: 10px;
-            min-height: 150px; /* Consistent height */
+            background-color: #fff; /* White card background */
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
             text-align: left;
-            box-sizing: border-box;
-            background-color: #f9f9f9; /* Light gray for calendar feel */
+            transition: transform 0.2s; /* Hover effect */
+        }
+        .event:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: 700;
         }
-        p {
-            font-size: 1em;
-            color: #666;
-            margin: 5px 0;
+        .event p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 8px 0;
+        }
+        .event p strong {
+            color: #222; /* Darker for emphasis */
         }
         .instagram-link {
-            margin: 20px 0;
+            margin: 40px 0;
         }
         a {
             color: #FF0000; /* Red for Instagram link */
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            font-weight: 500;
         }
         a:hover {
             text-decoration: underline;
@@ -65,7 +76,7 @@
     </div>
     <div class="events">
         <h1>Upcoming Events</h1>
-        <div id="events-list" class="events-grid"></div> <!-- Calendar grid -->
+        <div id="events-list" class="events-grid"></div> <!-- Event cards -->
     </div>
     <div class="instagram-link">
         <a href="https://www.instagram.com/yourusername" target="_blank">Follow me on Instagram</a>
