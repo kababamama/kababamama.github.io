@@ -25,8 +25,14 @@
         }
         .event {
             margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #ccc; /* Separator line */
+            padding: 15px;
+            border: 2px solid #000000; /* Black border */
+            width: 300px; /* Fixed width for square look */
+            height: 150px; /* Fixed height for square-ish shape */
+            display: inline-block; /* Align events side-by-side or stacked */
+            vertical-align: top; /* Align tops if side-by-side */
+            text-align: left; /* Left-align text inside */
+            box-sizing: border-box; /* Include padding in size */
         }
         h1 {
             font-size: 2em;
@@ -53,14 +59,14 @@
 </head>
 <body>
     <div class="logo-container">
-        <img src="logo1.png" alt="Kababa Mama Logo">
+        <img src="logo.png" alt="Kababa Mama Logo">
     </div>
     <div class="events">
         <h1>Upcoming Events</h1>
         <div id="events-list"></div> <!-- Events will load here -->
     </div>
     <div class="instagram-link">
-        <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">Follow me on Instagram</a>
+        <a href="https://www.instagram.com/yourusername" target="_blank">Follow me on Instagram</a>
     </div>
 
     <script>
