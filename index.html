@@ -26,30 +26,31 @@
             background: rgba(255, 255, 255, 0.85);
             z-index: -1;
         }
-        header {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
         .logo-container {
-            flex-shrink: 0;
+            padding: 15px 0;
+        }
+        .logo-container a {
+            display: inline-block;
+            border: 2px solid #FF0000; /* Red circular frame */
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         img.logo {
-            max-width: 20%; /* Slightly smaller for header */
+            max-width: 25%;
             height: auto;
             display: block;
+            border-radius: 50%; /* Circular image */
         }
         .links {
-            display: flex;
-            gap: 20px;
+            margin: 10px 0;
         }
         .links a {
             color: #FF0000;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: 500;
+            margin: 0 15px;
         }
         .links a:hover {
             text-decoration: underline;
@@ -60,7 +61,7 @@
             margin-right: 5px;
         }
         .events {
-            margin: 20px auto;
+            margin: 0 auto;
             max-width: 1200px;
             padding: 0 10px;
         }
@@ -142,7 +143,7 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 25%;
+                max-width: 30%;
             }
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
@@ -150,36 +151,23 @@
                 font-size: 2em;
             }
             img.logo {
-                max-width: 25%;
-            }
-        }
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                padding: 10px;
-            }
-            .links {
-                margin-top: 10px;
-                flex-direction: column;
-                gap: 10px;
+                max-width: 30%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
-        </div>
-        <div class="links">
-            <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
-                <i class="fab fa-instagram"></i> Follow me on Instagram
-            </a>
-            <a href="contact.html">
-                <i class="fas fa-envelope"></i> Contact Us
-            </a>
-        </div>
-    </header>
+    <div class="logo-container">
+        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
+    </div>
+    <div class="links">
+        <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
+            <i class="fab fa-instagram"></i> Follow me on Instagram
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i> Contact Us
+        </a>
+    </div>
     <div class="events">
         <h1>Upcoming Events</h1>
         <div id="events-list" class="events-grid"></div>
