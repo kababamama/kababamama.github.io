@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Us - Kababa Mama Hawaii</title>
+    <title>Kababa Mama Hawaii</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -15,7 +15,7 @@
             line-height: 1.6;
         }
         .logo-container {
-            padding: 5px 0;
+            padding: 0; /* Reduced from 1px to 0px */
         }
         img {
             max-width: 80%;
@@ -23,52 +23,91 @@
             display: block;
             margin: 0 auto;
         }
-        .contact {
-            margin: 20px auto;
-            max-width: 800px;
-            padding: 0 20px;
+        .events {
+            margin: 0 auto; /* Reduced from 1px to 0px */
+            max-width: 1200px;
+            padding: 0 10px;
         }
-        .contact h1 {
+        .events h1 {
             font-family: 'Montserrat', sans-serif;
             color: #000000;
             font-size: 2.5em;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             padding-bottom: 10px; /* Kept for spacing below heading */
             /* Removed border-bottom: 2px solid #FF0000 */
         }
-        .contact p {
-            font-size: 1.1em;
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+            justify-items: center;
+        }
+        .event {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: left;
+            transition: transform 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 180px;
+        }
+        .event:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            font-size: 2em;
             color: #333;
-            margin: 10px 0;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
-        .contact a {
-            color: #FF0000;
-            text-decoration: none;
-            font-weight: 500;
+        .event p {
+            font-size: 0.95em;
+            color: #555;
+            margin: 5px 0;
         }
-        .contact a:hover {
-            text-decoration: underline;
+        .event p strong {
+            color: #222;
         }
-        .contact i {
-            font-size: 1.5em;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-        .back-link {
+        .links {
             margin: 30px 0;
         }
-        .back-link a {
+        .links a {
             color: #FF0000;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: 500;
+            margin: 0 15px;
         }
-        .back-link a:hover {
+        .links a:hover {
             text-decoration: underline;
         }
+        .links i {
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
         @media (min-width: 768px) {
+            .events-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .event p {
+                font-size: 1em;
+            }
+            .event p.location,
+            .event p.address {
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+            }
             img {
                 max-width: 95%;
             }
@@ -79,13 +118,43 @@
     <div class="logo-container">
         <img src="logo1.png" alt="Kababa Mama Logo">
     </div>
-    <div class="contact">
-        <h1>Contact Us</h1>
-        <p>Email: <a href="mailto:info@kababamama.com">info@kababamama.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/kababamama.hawaii" target="_blank"><i class="fab fa-instagram"></i> @kababamama.hawaii</a></p>
+    <div class="events">
+        <h1>Upcoming Events</h1>
+        <div id="events-list" class="events-grid"></div>
     </div>
-    <div class="back-link">
-        <a href="index.html">Back to Events</a>
+    <div class="links">
+        <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
+            <i class="fab fa-instagram"></i> Follow me on Instagram
+        </a>
+        <a href="contact.html">Contact Us</a>
     </div>
+
+    <script>
+        fetch('events.json')
+            .then(response => response.json())
+            .then(events => {
+                const eventsList = document.getElementById('events-list');
+                eventsList.innerHTML = '';
+                if (events.length === 0) {
+                    eventsList.innerHTML = '<p>No events found.</p>';
+                } else {
+                    events.forEach(event => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'event';
+                        eventDiv.innerHTML = `
+                            <p><strong>Date:</strong> ${event.date}</p>
+                            <p class="location"><strong>Location:</strong> ${event.location}</p>
+                            <p class="address"><strong>Address:</strong> ${event.address}</p>
+                            <p><strong>Time:</strong> ${event.time}</p>
+                        `;
+                        eventsList.appendChild(eventDiv);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error loading events:', error);
+                document.getElementById('events-list').innerHTML = '<p>Error loading events.</p>';
+            });
+    </script>
 </body>
 </html>
