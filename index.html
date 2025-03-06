@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Preload sunset1.png -->
     <link rel="preload" href="sunset1.png" as="image">
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f0f0f0 url('sunset1.png') no-repeat center center fixed;
+            background: #f0f0f0 url('sunset1.png') no-repeat center center fixed; /* Fallback color */
             background-size: cover;
             text-align: center;
             line-height: 1.6;
@@ -27,25 +28,21 @@
             z-index: -1;
         }
         .logo-container {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 10;
+            padding: 0;
+            background: none;
         }
         .logo-container a {
             display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        .logo-container a:hover {
-            transform: scale(1.1); /* Slight enlarge on hover */
         }
         img.logo {
-            max-width: 15%; /* Smaller for badge */
+            max-width: 25%;
             height: auto;
             display: block;
+            margin: 0 auto;
+            background: transparent;
         }
         .links {
-            margin: 20px 0;
+            margin: 10px 0;
         }
         .links a {
             color: #FF0000;
@@ -63,7 +60,7 @@
             margin-right: 5px;
         }
         .events {
-            margin: 20px auto;
+            margin: 0 auto;
             max-width: 1200px;
             padding: 0 10px;
         }
@@ -145,7 +142,7 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 20%;
+                max-width: 30%;
             }
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
@@ -153,7 +150,7 @@
                 font-size: 2em;
             }
             img.logo {
-                max-width: 20%;
+                max-width: 30%;
             }
         }
     </style>
@@ -164,7 +161,7 @@
     </div>
     <div class="links">
         <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
-            <i class="fab fa-instagram"></i> Follow me on Instagram
+            <i class="fab fa-instagram"></i> Instagram
         </a>
         <a href="contact.html">
             <i class="fas fa-envelope"></i> Contact Us
