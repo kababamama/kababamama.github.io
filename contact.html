@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Preload sunset1.png -->
+    <link rel="preload" href="sunset1.png" as="image">
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('sunset1.png') no-repeat center center fixed;
+            background: #f0f0f0 url('sunset1.png') no-repeat center center fixed; /* Fallback color */
             background-size: cover;
             text-align: center;
             line-height: 1.6;
@@ -42,10 +44,6 @@
         .contact {
             margin: 20px auto;
             max-width: 800px;
-            padding: 20px 20px 40px; /* Kept padding */
-            border: 2px solid #FF0000; /* Thin red border */
-            border-radius: 8px; /* Gentle corners */
-            /* No background or shadow for minimal look */
         }
         .contact h1 {
             font-family: 'Montserrat', sans-serif;
