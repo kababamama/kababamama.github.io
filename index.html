@@ -22,22 +22,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.85); /* Very light white overlay */
-            z-index: -1; /* Behind content */
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
         }
         .logo-container {
             padding: 0;
-            background: none; /* Ensure no background interferes */
+            background: none;
         }
         .logo-container a {
-            display: inline-block; /* Prevents extra spacing */
+            display: inline-block;
         }
-        img {
-            max-width: 80%;
+        img.logo {
+            max-width: 80%; /* Consistent with original size */
             height: auto;
             display: block;
             margin: 0 auto;
-            background: transparent; /* Remove any white box from logo */
+            background: transparent;
         }
         .links {
             margin: 10px 0;
@@ -123,15 +123,15 @@
                 overflow: visible;
                 text-overflow: clip;
             }
-            img {
-                max-width: 95%;
+            img.logo {
+                max-width: 95%; /* Consistent with original desktop size */
             }
         }
     </style>
 </head>
 <body>
     <div class="logo-container">
-        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo"></a>
+        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
     </div>
     <div class="links">
         <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
