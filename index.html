@@ -75,10 +75,16 @@
         }
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mobile/iOS default */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             width: 100%;
             justify-items: center;
+        }
+        .event-link {
+            text-decoration: none; /* Remove underline from link */
+            color: inherit; /* Inherit text color */
+            display: block; /* Full clickable area */
+            width: 100%;
         }
         .event {
             background-color: rgba(255, 255, 255, 0.9);
@@ -151,7 +157,7 @@
             img.logo {
                 max-width: 35%;
             }
-            /* iOS keeps auto-fit grid, no change */
+            /* iOS keeps auto-fit grid */
         }
     </style>
 </head>
@@ -193,7 +199,12 @@
                             <p class="address"><strong>Address:</strong> ${event.address}</p>
                             <p><strong>Time:</strong> ${event.time}</p>
                         `;
-                        eventsList.appendChild(eventDiv);
+                        const eventLink = document.createElement('a');
+                        eventLink.className = 'event-link';
+                        eventLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}`;
+                        eventLink.target = '_blank'; // Open in new tab
+                        eventLink.appendChild(eventDiv);
+                        eventsList.appendChild(eventLink);
                     });
                 }
             })
