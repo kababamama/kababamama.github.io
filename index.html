@@ -3,7 +3,7 @@
 <head>
     <title>Kababa Mama Hawaii</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
@@ -28,14 +28,12 @@
             padding: 0 10px;
         }
         .events h1 {
-            font-family: 'Montserrat', sans-serif;
-            color: #006666;
-            font-size: 2.5em;
-            font-weight: 700;
+            font-family: 'Bangers', sans-serif;
+            color: #FF0000;
+            font-size: 3.5em;
             text-align: center;
             margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #006666;
+            text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 3px 3px 5px rgba(0, 0, 0, 0.5);
         }
         .events-grid {
             display: grid;
@@ -87,7 +85,7 @@
         }
         @media (min-width: 768px) {
             .events-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Wider cards */
             }
             h1 {
                 font-size: 2.5em;
@@ -97,9 +95,9 @@
             }
             .event p.location,
             .event p.address {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                white-space: nowrap; /* No wrapping */
+                overflow: visible; /* Show full text */
+                text-overflow: clip; /* No ellipsis, full text */
             }
             img {
                 max-width: 95%;
@@ -120,14 +118,13 @@
     </div>
 
     <script>
-        // Fetch events from events.json and display them
         fetch('events.json')
             .then(response => response.json())
             .then(events => {
                 const eventsList = document.getElementById('events-list');
-                eventsList.innerHTML = ''; // Clear existing events
+                eventsList.innerHTML = '';
                 if (events.length === 0) {
-                    eventsList.innerHTML = '<p>No events found.</p>'; // Debug message
+                    eventsList.innerHTML = '<p>No events found.</p>';
                 } else {
                     events.forEach(event => {
                         const eventDiv = document.createElement('div');
@@ -144,7 +141,7 @@
             })
             .catch(error => {
                 console.error('Error loading events:', error);
-                document.getElementById('events-list').innerHTML = '<p>Error loading events.</p>'; // Debug message
+                document.getElementById('events-list').innerHTML = '<p>Error loading events.</p>';
             });
     </script>
 </body>
