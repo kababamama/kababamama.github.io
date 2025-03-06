@@ -42,7 +42,7 @@
             margin: 20px 0;
         }
         a {
-            color: #1E90FF; /* Instagram blue */
+            color: #FF0000; /* Red for Instagram link */
             text-decoration: none;
             font-size: 1.2em;
         }
@@ -57,19 +57,30 @@
     </div>
     <div class="events">
         <h1>Upcoming Events</h1>
-        <div class="event">
-            <p><strong>Date:</strong> March 6, 2025</p>
-            <p><strong>Location:</strong> Ono Grindz and Makeke at Wai Kai</p>
-            <p><strong>Time:</strong> 4:00 PM - 8:00 PM</p>
-        </div>
-        <div class="event">
-            <p><strong>Date:</strong> March 8, 2025</p>
-            <p><strong>Location:</strong> Village Night Market</p>
-            <p><strong>Time:</strong> 5:00 PM - 9:00 PM</p>
-        </div>
+        <div id="events-list"></div> <!-- Events will load here -->
     </div>
     <div class="instagram-link">
         <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">Follow me on Instagram</a>
     </div>
+
+    <script>
+        // Fetch events from events.json and display them
+        fetch('events.json')
+            .then(response => response.json())
+            .then(events => {
+                const eventsList = document.getElementById('events-list');
+                events.forEach(event => {
+                    const eventDiv = document.createElement('div');
+                    eventDiv.className = 'event';
+                    eventDiv.innerHTML = `
+                        <p><strong>Date:</strong> ${event.date}</p>
+                        <p><strong>Location:</strong> ${event.location}</p>
+                        <p><strong>Time:</strong> ${event.time}</p>
+                    `;
+                    eventsList.appendChild(eventDiv);
+                });
+            })
+            .catch(error => console.error('Error loading events:', error));
+    </script>
 </body>
 </html>
