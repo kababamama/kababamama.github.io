@@ -3,6 +3,7 @@
 <head>
     <title>Kababa Mama Hawaii</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile responsiveness -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- Montserrat font -->
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
@@ -25,6 +26,16 @@
             margin: 40px auto;
             max-width: 1200px;
             padding: 0 10px;
+        }
+        .events h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #006666; /* Dark teal */
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #006666; /* Teal underline */
         }
         .events-grid {
             display: grid;
@@ -77,7 +88,7 @@
         /* Desktop adjustments */
         @media (min-width: 768px) {
             .events-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards */
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             }
             h1 {
                 font-size: 2.5em;
@@ -87,13 +98,12 @@
             }
             .event p.location,
             .event p.address {
-                white-space: nowrap; /* No wrapping */
+                white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis; /* Ellipsis if too long */
-                display: block; /* Ensure full line */
+                text-overflow: ellipsis;
             }
             img {
-                max-width: 95%; /* Even bigger logo on desktop */
+                max-width: 95%; /* Bigger logo on desktop */
             }
         }
     </style>
