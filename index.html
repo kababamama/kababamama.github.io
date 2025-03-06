@@ -3,7 +3,7 @@
 <head>
     <title>Kababa Mama Hawaii</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> <!-- Lobster font -->
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
@@ -28,12 +28,15 @@
             padding: 0 10px;
         }
         .events h1 {
-            font-family: 'Bangers', sans-serif;
-            color: #FF0000;
-            font-size: 3.5em;
+            font-family: 'Lobster', cursive;
+            background: linear-gradient(to right, #FF0000, #FFFFFF); /* Red to white gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             text-align: center;
             margin-bottom: 30px;
-            text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 3px 3px 5px rgba(0, 0, 0, 0.5);
         }
         .events-grid {
             display: grid;
@@ -95,9 +98,9 @@
             }
             .event p.location,
             .event p.address {
-                white-space: nowrap; /* No wrapping */
-                overflow: visible; /* Show full text */
-                text-overflow: clip; /* No ellipsis, full text */
+                white-space: nowrap;
+                overflow: visible; /* Full text visible */
+                text-overflow: clip; /* No ellipsis */
             }
             img {
                 max-width: 95%;
