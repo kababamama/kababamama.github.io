@@ -10,9 +10,20 @@
             font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background: url('sunset.png') no-repeat center center fixed; /* Updated to sunset.png */
+            background-size: cover;
             text-align: center;
             line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85); /* Very light white overlay */
+            z-index: -1; /* Behind content */
         }
         .logo-container {
             padding: 5px 0;
@@ -27,6 +38,9 @@
             margin: 20px auto;
             max-width: 800px;
             padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white for readability */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .contact h1 {
             font-family: 'Montserrat', sans-serif;
@@ -46,7 +60,7 @@
             color: #FF0000;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.2em; /* Match index.html link size */
+            font-size: 1.2em;
         }
         .contact a:hover {
             text-decoration: underline;
@@ -81,7 +95,7 @@
     </div>
     <div class="contact">
         <h1>Contact Us</h1>
-        <p><a href="mailto:kababamamahi@gmail.com"><i class="fas fa-envelope"></i>kababamamahi@gmail.com</a></p>
+        <p><a href="mailto:kababamamahi@gmail.com"><i class="fas fa-envelope"></i> kababamamahi@gmail.com</a></p>
         <p><a href="https://www.instagram.com/kababamama.hawaii" target="_blank"><i class="fab fa-instagram"></i> @kababamama.hawaii</a></p>
     </div>
     <div class="back-link">
