@@ -82,7 +82,6 @@
             vertical-align: middle;
             margin-right: 5px;
         }
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -131,20 +130,14 @@
     </div>
     <h1>Photo Gallery</h1>
     <div class="gallery">
-        <img src="image1.png" alt="Photo 1">
-        <img src="image2.png" alt="Photo 2">
-        <img src="image3.png" alt="Photo 3">
-        <img src="image4.png" alt="Photo 3">
-        <img src="image5.png" alt="Photo 3">
-        <img src="image6.png" alt="Photo 3">
-        <img src="image7.png" alt="Photo 3">
-        <!-- Add more photos as needed -->
+        <img src="photo1.jpg" alt="Photo 1" onclick="openModal(this.src)">
+        <img src="photo2.jpg" alt="Photo 2" onclick="openModal(this.src)">
+        <img src="photo3.jpg" alt="Photo 3" onclick="openModal(this.src)">
     </div>
     <div class="back-link">
         <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
 
-    <!-- Modal for expanded photo -->
     <div id="photoModal" class="modal">
         <span class="close" onclick="closeModal()">×</span>
         <img class="modal-content" id="expandedPhoto">
@@ -152,6 +145,7 @@
 
     <script>
         function openModal(src) {
+            console.log("Modal opened with src:", src); // Debug log
             const modal = document.getElementById('photoModal');
             const expandedPhoto = document.getElementById('expandedPhoto');
             expandedPhoto.src = src;
