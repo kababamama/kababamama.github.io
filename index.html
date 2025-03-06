@@ -42,6 +42,10 @@
         }
         .links {
             margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
         .links a {
             color: #FF0000;
@@ -57,6 +61,16 @@
             font-size: 1.5em;
             vertical-align: middle;
             margin-right: 5px;
+        }
+        /* New class for grouping Instagram and Contact Us */
+        .links .social-group {
+            display: inline-flex;
+            flex-wrap: nowrap; /* Keeps Instagram and Contact Us on one line */
+            gap: 30px; /* Space between Instagram and Contact Us */
+        }
+        .links .photos-link {
+            display: block; /* Forces Photos to a new line */
+            margin-top: 10px; /* Adds spacing above Photos */
         }
         .events {
             margin: 0 auto;
@@ -165,13 +179,15 @@
         <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
     </div>
     <div class="links">
-        <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="contact.html">
-            <i class="fas fa-envelope"></i> Contact Us
-        </a>
-        <a href="photos.html">
+        <div class="social-group">
+            <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+        <a href="photos.html" class="photos-link">
             <i class="fas fa-camera"></i> Photos
         </a>
     </div>
