@@ -33,7 +33,7 @@
             display: inline-block;
         }
         img.logo {
-            max-width: 25%; /* Half of previous 50% for mobile */
+            max-width: 25%; /* Matches index.html base mobile size */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -89,7 +89,13 @@
         }
         @media (min-width: 768px) {
             img.logo {
-                max-width: 30%; /* Half of previous 60% for desktop */
+                max-width: 30%; /* Matches index.html desktop size */
+            }
+        }
+        /* iOS-specific adjustment to match index.html */
+        @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
+            img.logo {
+                max-width: 30%; /* Matches index.html iOS mobile size (20% bigger than 25%) */
             }
         }
     </style>
