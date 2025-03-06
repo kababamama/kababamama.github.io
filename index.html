@@ -33,7 +33,7 @@
             display: inline-block;
         }
         img.logo {
-            max-width: 25%;
+            max-width: 25%; /* Base size for mobile */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -70,7 +70,7 @@
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 10px;
-            white-space: nowrap; /* Prevent wrapping */
+            white-space: nowrap;
         }
         .events-grid {
             display: grid;
@@ -125,13 +125,16 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 30%;
+                max-width: 30%; /* Base size for desktop */
             }
         }
-        /* iOS-specific adjustment */
+        /* iOS-specific adjustments */
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
             .events h1 {
-                font-size: 2em; /* Smaller font size for iOS to fit on one line */
+                font-size: 2em; /* Fits "Upcoming Events" on one line */
+            }
+            img.logo {
+                max-width: 30%; /* 20% bigger than 25% for iOS mobile */
             }
         }
     </style>
