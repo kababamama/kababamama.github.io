@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Kababa Mama Hawaii</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile responsiveness -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- Montserrat font -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Bangers font -->
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
@@ -17,7 +17,7 @@
             padding: 30px 0;
         }
         img {
-            max-width: 80%; /* Default for mobile (iPhone OS) */
+            max-width: 80%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -28,14 +28,12 @@
             padding: 0 10px;
         }
         .events h1 {
-            font-family: 'Montserrat', sans-serif;
-            color: #006666; /* Dark teal */
-            font-size: 2.5em;
-            font-weight: 700;
+            font-family: 'Bangers', sans-serif;
+            color: #FF0000;
+            font-size: 3.5em;
             text-align: center;
             margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #006666; /* Teal underline */
+            text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 3px 3px 5px rgba(0, 0, 0, 0.5);
         }
         .events-grid {
             display: grid;
@@ -85,7 +83,6 @@
         a:hover {
             text-decoration: underline;
         }
-        /* Desktop adjustments */
         @media (min-width: 768px) {
             .events-grid {
                 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -103,7 +100,7 @@
                 text-overflow: ellipsis;
             }
             img {
-                max-width: 95%; /* Bigger logo on desktop */
+                max-width: 95%;
             }
         }
     </style>
@@ -121,25 +118,31 @@
     </div>
 
     <script>
-        // Fetch events from events.json and display them
         fetch('events.json')
             .then(response => response.json())
             .then(events => {
                 const eventsList = document.getElementById('events-list');
-                eventsList.innerHTML = ''; // Clear existing events
-                events.forEach(event => {
-                    const eventDiv = document.createElement('div');
-                    eventDiv.className = 'event';
-                    eventDiv.innerHTML = `
-                        <p><strong>Date:</strong> ${event.date}</p>
-                        <p class="location"><strong>Location:</strong> ${event.location}</p>
-                        <p class="address"><strong>Address:</strong> ${event.address}</p>
-                        <p><strong>Time:</strong> ${event.time}</p>
-                    `;
-                    eventsList.appendChild(eventDiv);
-                });
+                eventsList.innerHTML = '';
+                if (events.length === 0) {
+                    eventsList.innerHTML = '<p>No events found.</p>';
+                } else {
+                    events.forEach(event => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'event';
+                        eventDiv.innerHTML = `
+                            <p><strong>Date:</strong> ${event.date}</p>
+                            <p class="location"><strong>Location:</strong> ${event.location}</p>
+                            <p class="address"><strong>Address:</strong> ${event.address}</p>
+                            <p><strong>Time:</strong> ${event.time}</p>
+                        `;
+                        eventsList.appendChild(eventDiv);
+                    });
+                }
             })
-            .catch(error => console.error('Error loading events:', error));
+            .catch(error => {
+                console.error('Error loading events:', error);
+                document.getElementById('events-list').innerHTML = '<p>Error loading events.</p>';
+            });
     </script>
 </body>
 </html>
