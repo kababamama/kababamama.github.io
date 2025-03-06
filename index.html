@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Preload sunset1.png -->
     <link rel="preload" href="sunset1.png" as="image">
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f0f0f0 url('sunset1.png') no-repeat center center fixed; /* Fallback color */
+            background: #f0f0f0 url('sunset1.png') no-repeat center center fixed;
             background-size: cover;
             text-align: center;
             line-height: 1.6;
@@ -27,29 +26,30 @@
             background: rgba(255, 255, 255, 0.85);
             z-index: -1;
         }
-        .logo-container {
-            padding: 0;
-            background: none;
+        header {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .logo-container a {
-            display: inline-block;
+        .logo-container {
+            flex-shrink: 0;
         }
         img.logo {
-            max-width: 25%;
+            max-width: 20%; /* Slightly smaller for header */
             height: auto;
             display: block;
-            margin: 0 auto;
-            background: transparent;
         }
         .links {
-            margin: 10px 0;
+            display: flex;
+            gap: 20px;
         }
         .links a {
             color: #FF0000;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: 500;
-            margin: 0 15px;
         }
         .links a:hover {
             text-decoration: underline;
@@ -60,7 +60,7 @@
             margin-right: 5px;
         }
         .events {
-            margin: 0 auto;
+            margin: 20px auto;
             max-width: 1200px;
             padding: 0 10px;
         }
@@ -142,7 +142,7 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 30%;
+                max-width: 25%;
             }
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
@@ -150,23 +150,36 @@
                 font-size: 2em;
             }
             img.logo {
-                max-width: 30%;
+                max-width: 25%;
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .links {
+                margin-top: 10px;
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
-    </div>
-    <div class="links">
-        <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="contact.html">
-            <i class="fas fa-envelope"></i> Contact Us
-        </a>
-    </div>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
+        </div>
+        <div class="links">
+            <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
+                <i class="fab fa-instagram"></i> Follow me on Instagram
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+    </header>
     <div class="events">
         <h1>Upcoming Events</h1>
         <div id="events-list" class="events-grid"></div>
