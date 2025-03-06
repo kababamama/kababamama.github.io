@@ -23,6 +23,24 @@
             display: block;
             margin: 0 auto;
         }
+        .links {
+            margin: 10px 0; /* Small spacing above and below links */
+        }
+        .links a {
+            color: #FF0000;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .links i {
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
         .events {
             margin: 0 auto;
             max-width: 1200px;
@@ -73,24 +91,6 @@
         .event p strong {
             color: #222;
         }
-        .links {
-            margin: 30px 0;
-        }
-        .links a {
-            color: #FF0000;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 500;
-            margin: 0 15px;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        .links i {
-            font-size: 1.5em;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
         @media (min-width: 768px) {
             .events-grid {
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -117,15 +117,15 @@
     <div class="logo-container">
         <a href="index.html"><img src="logo1.png" alt="Kababa Mama Logo"></a>
     </div>
-    <div class="events">
-        <h1>Upcoming Events</h1>
-        <div id="events-list" class="events-grid"></div>
-    </div>
     <div class="links">
         <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
             <i class="fab fa-instagram"></i> Follow me on Instagram
         </a>
         <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="events">
+        <h1>Upcoming Events</h1>
+        <div id="events-list" class="events-grid"></div>
     </div>
 
     <script>
