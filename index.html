@@ -33,7 +33,7 @@
             display: inline-block;
         }
         img.logo {
-            max-width: 25%; /* Base size for mobile */
+            max-width: 25%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -94,6 +94,21 @@
         .event:hover {
             transform: translateY(-5px);
         }
+        footer {
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #333;
+        }
+        footer p {
+            margin: 0;
+        }
+        footer a {
+            color: #FF0000;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
         h1 {
             font-size: 2em;
             color: #333;
@@ -125,16 +140,16 @@
                 text-overflow: clip;
             }
             img.logo {
-                max-width: 30%; /* Base size for desktop */
+                max-width: 30%;
             }
         }
         /* iOS-specific adjustments */
         @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
             .events h1 {
-                font-size: 2em; /* Fits "Upcoming Events" on one line */
+                font-size: 2em;
             }
             img.logo {
-                max-width: 30%; /* 20% bigger than 25% for iOS mobile */
+                max-width: 30%;
             }
         }
     </style>
@@ -155,6 +170,9 @@
         <h1>Upcoming Events</h1>
         <div id="events-list" class="events-grid"></div>
     </div>
+    <footer>
+        <p>&copy; 2025 Kababa Mama Hawaii | <a href="mailto:kababamamahi@gmail.com">Contact Us</a></p>
+    </footer>
 
     <script>
         fetch('events.json')
