@@ -40,6 +40,37 @@
             margin: 0 auto;
             background: transparent;
         }
+        .links {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .links a {
+            color: #FF0000;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .links i {
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .links .social-group {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            gap: 30px;
+        }
+        .links .photos-link {
+            display: block;
+            margin-top: 10px;
+        }
         h1 {
             font-family: 'Montserrat', sans-serif;
             color: #000000;
@@ -128,6 +159,19 @@
     <div class="logo-container">
         <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
     </div>
+    <div class="links">
+        <div class="social-group">
+            <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+        <a href="photos.html" class="photos-link">
+            <i class="fas fa-camera"></i> Photos
+        </a>
+    </div>
     <h1>Photo Gallery</h1>
     <div class="gallery">
         <img src="image1.png" alt="Photo 1" onclick="openModal(this.src)">
@@ -149,7 +193,7 @@
 
     <script>
         function openModal(src) {
-            console.log("Modal opened with src:", src); // Debug log
+            console.log("Modal opened with src:", src);
             const modal = document.getElementById('photoModal');
             const expandedPhoto = document.getElementById('expandedPhoto');
             expandedPhoto.src = src;
