@@ -18,6 +18,12 @@
         "time": "5:00 PM - 9:00 PM"
     },
     {
+        "date": "March 25, 2025",
+        "location": "Hawaiian Airlines HQ",
+        "address": "3375 Koapaka St G-350, Honolulu, HI 96819",
+        "time": "11:00 AM - 2:00 PM"
+    },
+    {
         "date": "March 27, 2025",
         "location": "Ono Grindz and Makeke at Wai Kai",
         "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
@@ -28,5 +34,41 @@
         "location": "Keiki Street Festival",
         "address": "Our Kakaʻako",
         "time": "10:00 AM - 2:00 PM"
-    }
+    },
+    {
+        "date": "April 3, 2025",
+        "location": "Ono Grindz and Makeke at Wai Kai",
+        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
+        "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "April 4, 2025",
+        "location": "Anchor Church",
+        "address": "45-815 Pookela St, Kaneohe, HI 96744",
+        "time": "6:00 PM - 9:00 PM"
+    },
+    {
+        "date": "April 10, 2025",
+        "location": "Ono Grindz and Makeke at Wai Kai",
+        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
+        "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "April 17, 2025",
+        "location": "Ono Grindz and Makeke at Wai Kai",
+        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
+        "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "April 18, 2025",
+        "location": "What The Truck",
+        "address": "94-849 Lumiaina St., Waipahu HI 96797",
+        "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "April 24, 2025",
+        "location": "Ono Grindz and Makeke at Wai Kai",
+        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
+        "time": "4:00 PM - 8:00 PM"
+    },
 ]
