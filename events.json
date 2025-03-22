@@ -1,17 +1,5 @@
 [
     {
-        "date": "March 20, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "March 21, 2025",
-        "location": "Anchor Church",
-        "address": "45-815 Pookela St, Kaneohe, HI 96744",
-        "time": "6:00 PM - 9:00 PM"
-    },
-    {
         "date": "March 22, 2025",
         "location": "Village Night Market",
         "address": "98-1005 Moanalua Rd, Aiea, HI 96701",
@@ -28,6 +16,12 @@
         "location": "Ono Grindz and Makeke at Wai Kai",
         "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
         "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "April 12, 2025",
+        "location": "One Dream",
+        "address": "Dreamhouse Center, 800 Kama'Aha Avenue, Kapolei, HI",
+        "time": "12:00 PM - 6:00 PM"
     },
     {
         "date": "March 29, 2025",
