@@ -1,65 +1,5 @@
 [
     {
-        "date": "April 17, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "April 18, 2025",
-        "location": "What The Truck",
-        "address": "94-849 Lumiaina St., Waipahu HI 96797",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "April 19, 2025",
-        "location": "Village Night Market",
-        "address": "98-1005 Moanalua Rd, Aiea, HI 96701",
-        "time": "5:00 PM - 9:00 PM"
-    },
-    {
-        "date": "April 24, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "April 26, 2025",
-        "location": "Village Night Market",
-        "address": "98-1005 Moanalua Rd, Aiea, HI 96701",
-        "time": "5:00 PM - 9:00 PM"
-    },
-    {
-        "date": "May 1, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "May 2, 2025",
-        "location": "Holy Family Aloha Festival",
-        "address": "830 Main Street, Honolulu, HI 96818",
-        "time": "4:00 PM - 9:00 PM"
-    },
-    {
-        "date": "May 3, 2025",
-        "location": "Village Night Market",
-        "address": "98-1005 Moanalua Rd, Aiea, HI 96701",
-        "time": "5:00 PM - 9:00 PM"
-    },
-    {
-        "date": "May 8, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "May 10, 2025",
-        "location": "2025 Artsfest at Le Jardin Academy",
-        "address": "917 Kalanianaʻole Hwy, Kailua, HI, 96734",
-        "time": "2:00 PM - 6:00 PM"
-    },
-    {
         "date": "May 15, 2025",
         "location": "Ono Grindz and Makeke at Wai Kai",
         "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
@@ -76,5 +16,29 @@
         "location": "Mililani Garden Nights",
         "address": "94-415 Makapipipi Street",
         "time": "4:00 PM - 9:00 PM"
+    },
+    {
+        "date": "May 22, 2025",
+        "location": "Ono Grindz and Makeke at Wai Kai",
+        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
+        "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "May 24, 2025",
+        "location": "Village Night Market",
+        "address": "98-1005 Moanalua Rd, Aiea, HI 96701",
+        "time": "5:00 PM - 9:00 PM"
+    },
+    {
+        "date": "May 29, 2025",
+        "location": "Ono Grindz and Makeke at Wai Kai",
+        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
+        "time": "4:00 PM - 8:00 PM"
+    },
+    {
+        "date": "May 31, 2025",
+        "location": "Lē'ahi Festival",
+        "address": "Kalakaua Avenue.",
+        "time": "4:00 PM - 10:00 PM"
     }
 ]
