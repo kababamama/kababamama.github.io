@@ -1,62 +1,44 @@
 [
     {
-        "date": "July 3, 2025",
+        "date": "Aug 14, 2025",
         "location": "Ono Grindz and Makeke at Wai Kai",
         "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
         "time": "4:00 PM - 8:00 PM"
     },
     {
-        "date": "July 4, 2025",
+        "date": "Aug 15, 2025",
         "location": "What The Truck",
         "address": "Waikele Center, 94-849 Lumiaina Street, Waipahu",
         "time": "4:00 PM - 8:00 PM"
     },
     {
-        "date": "July 5, 2025",
+        "date": "Aug 16, 2025",
         "location": "Village Night Market",
         "address": "Pearlridge Mall, 98-1005 Moanalua Rd, Aiea, HI 96701",
         "time": "5:00 PM - 9:00 PM"
     },
     {
-        "date": "July 10, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
+        "date": "Aug 21, 2025",
+        "location": "Honolulu Beer Works",
+        "address": "1632 Hart St Honolulu HI, 96817",
+        "time": "1:00 PM - 7:00 PM"
     },
     {
-        "date": "July 12, 2025",
-        "location": "Taste Of Aloha",
-        "address": "500 Ala Moana Blvd, Honolulu, HI 96813",
-        "time": "4:00 PM - 8:00 PM"
+        "date": "Aug 23, 2025",
+        "location": "Village Night Market",
+        "address": "Pearlridge Mall, 98-1005 Moanalua Rd, Aiea, HI 96701",
+        "time": "5:00 PM - 9:00 PM"
     },
     {
-        "date": "July 17, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
+        "date": "Aug 28, 2025",
+        "location": "Honolulu Beer Works",
+        "address": "1632 Hart St Honolulu HI, 96817",
+        "time": "1:00 PM - 7:00 PM"
     },
     {
-        "date": "July 18, 2025",
-        "location": "What The Truck",
-        "address": "Waikele Center, 94-849 Lumiaina Street, Waipahu",
-        "time": "4:00 PM - 8:00 PM"
-    },
-    {
-        "date": "July 19, 2025",
-        "location": "Kaka'ako Night Market",
-        "address": "The Barn, Auahi St., Keawe St. and Coral St.",
-        "time": "5:00 PM - 10:00 PM"
-    },
-    {
-        "date": "July 26, 2025",
-        "location": "Private Event-CFS",
-        "address": "Ewa Beach, HI 96706",
-        "time": "2:00 PM - 6:00 PM"
-    },
-    {
-        "date": "July 31, 2025",
-        "location": "Ono Grindz and Makeke at Wai Kai",
-        "address": "91-1621 Keoneula Blvd Suite 3100, Ewa Beach, HI 96706",
-        "time": "4:00 PM - 8:00 PM"
+        "date": "Aug 30, 2025",
+        "location": "Village Night Market",
+        "address": "Pearlridge Mall, 98-1005 Moanalua Rd, Aiea, HI 96701",
+        "time": "5:00 PM - 9:00 PM"
     }
 ]
