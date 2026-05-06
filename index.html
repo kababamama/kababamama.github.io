@@ -1,288 +1,235 @@
-import logo from "@/assets/logo.webp";
-import truckSide from "@/assets/truck-side.jpeg";
-import truckNight from "@/assets/truck-night.jpeg";
-import kababPlate from "@/assets/menu-kabab-plate.jpg";
-import smash from "@/assets/menu-smash.jpg";
-import shawarma from "@/assets/menu-shawarma.jpg";
-import falafel from "@/assets/menu-falafel.jpg";
-import fries from "@/assets/menu-fries.jpg";
-import wings from "@/assets/menu-wings.jpg";
-import foldedBurger from "@/assets/menu-folded-burger.jpg";
-import falafelSmash from "@/assets/menu-falafel-smash.jpg";
-import { Instagram, MapPin, Clock, Calendar, ChefHat, Flame, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-import locKapolei from "@/assets/loc-kapolei.jpg";
-import locWaiKai from "@/assets/loc-waikai.jpg";
-import locFlavorFriday from "@/assets/loc-flavor-friday.jpg";
-import locPearlridge from "@/assets/loc-pearlridge-night.jpg";
-import cateringTruck from "@/assets/catering-truck-night.jpg";
-import storyWindow from "@/assets/story-window.jpg";
-import storyFamily from "@/assets/story-family.jpg";
-import story1 from "@/assets/story-1.jpg";
-import story2 from "@/assets/story-2.jpg";
-import story3 from "@/assets/story-3.jpg";
-import story4 from "@/assets/story-4.jpg";
-import { useEffect, useState } from "react";
-
-const events = [
-  {
-    day: "Wednesday",
-    time: "5 – 9 PM",
-    location: "Kapolei Golf Club",
-    address: "91-701 Farrington Hwy, Kapolei",
-    img: locKapolei,
-    link: "https://kapoleigolf.com/",
-  },
-  {
-    day: "Thursday",
-    time: "4 – 8 PM",
-    location: "Ono Grindz @ Wai Kai",
-    address: "91-1621 Keoneula Blvd, Ewa Beach",
-    img: locWaiKai,
-    link: "https://www.onogrindzandmakeke.com/",
-  },
-  {
-    day: "Friday",
-    time: "5 – 10 PM",
-    location: "Flavor Friday",
-    address: "Old Toys R Us, Pearlridge",
-    img: locFlavorFriday,
-    link: "https://www.google.com/maps/search/?api=1&query=Old+Toys+R+Us+Pearlridge+Aiea",
-  },
-  {
-    day: "Saturday",
-    time: "5 – 9 PM",
-    location: "Village Night Market",
-    address: "Pearlridge Center, Aiea",
-    img: locPearlridge,
-    link: "https://pearlridgeonline.com/event/37471-village-market",
-  },
-];
-
-const menu = [
-  { img: smash, name: "Mama's Smash", desc: "A flavorful blend of beef and lamb infused with Mediterranean herbs." },
-  { img: foldedBurger, name: "Crispy Cheeseburger", desc: "Grilled beef patty with crispy melted cheddar, dill pickles, caramelized onions." },
-  { img: shawarma, name: "Chicken Shawarma", desc: "Tender chicken thighs marinated for 24 hours in herbs and spices." },
-  { img: falafelSmash, name: "Falafel Smash", desc: "Falafel made from a blend of chickpeas, fresh parsley and traditional spices." },
-  { img: wings, name: "Honey Pomegranate Wings", desc: "Sticky-sweet glaze, chili crunch, scallions." },
-  { img: fries, name: "Addictive Garlicky Parmesan", desc: "Deep fried to perfection, parmesan covered fries with fresh garlic and parsley." },
-];
-
-const storyPhotos = [
-  { src: truckSide, caption: "Mama's truck", rotate: -6 },
-  { src: storyFamily, caption: "The whole crew", rotate: 4 },
-  { src: storyWindow, caption: "Order up!", rotate: -3 },
-  { src: story1, caption: "Aloha Oahu", rotate: 5 },
-  { src: story2, caption: "Family first", rotate: -5 },
-  { src: story3, caption: "On the road", rotate: 3 },
-  { src: story4, caption: "Made with love", rotate: -4 },
-];
-
-const Index = () => {
-  const [storyIdx, setStoryIdx] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setStoryIdx((i) => (i + 1) % storyPhotos.length), 3500);
-    return () => clearInterval(id);
-  }, []);
-  return (
-    <div className="min-h-screen bg-warm">
-      {/* NAV */}
-      <header className="absolute top-0 left-0 right-0 z-30">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
-          <a href="#" className="flex items-center" aria-label="Kababa Mama Hawaii home">
-            <img src={logo} alt="Kababa Mama" className="h-12 md:h-14 w-auto drop-shadow-lg" />
-          </a>
-          <div className="hidden md:flex items-center gap-8 text-primary-foreground/95 font-semibold text-sm tracking-wide">
-            <a href="#menu" className="hover:text-accent transition">Menu</a>
-            <a href="#events" className="hover:text-accent transition">Find Us</a>
-            <a href="#story" className="hover:text-accent transition">Our Story</a>
-            <a href="#contact" className="hover:text-accent transition">Contact</a>
-          </div>
-          <a href="https://www.instagram.com/kababamama.hawaii" target="_blank" rel="noreferrer"
-             className="text-primary-foreground hover:text-accent transition">
-            <Instagram className="w-6 h-6" />
-          </a>
-        </nav>
-      </header>
-
-      {/* HERO */}
-      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
-        <img src={truckNight} alt="Kababa Mama food truck at dusk on Oahu under string lights and palm trees"
-             className="absolute inset-0 w-full h-full object-cover" width={1920} height={1280} />
-        <div className="absolute inset-0 bg-foreground/55" />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <img src={logo} alt="Kababa Mama Hawaii" className="mx-auto w-full max-w-md md:max-w-2xl drop-shadow-2xl" />
-          <p className="text-primary-foreground/90 text-lg md:text-2xl mt-6 max-w-2xl mx-auto font-medium">
-            Smash pita burgers, sizzling shawarma, and crispy falafel —
-            made fresh from a renovated truck rolling across the island.
-          </p>
-          <div className="mt-10 flex justify-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-14 text-base shadow-warm">
-              <a href="#events">FIND MAMA</a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* MENU */}
-      <section id="menu" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm">The Menu</p>
-            <h2 className="text-4xl md:text-6xl mt-3">Smashed, charred,<br />and <span className="font-script text-primary font-normal">handed to you hot.</span></h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {menu.map((item) => (
-              <article key={item.name} className="group bg-card rounded-3xl overflow-hidden shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-square overflow-hidden">
-                  <img src={item.img} alt={item.name} loading="lazy" width={800} height={800}
-                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">{item.name}</h3>
-                  <p className="text-muted-foreground text-sm mt-2 leading-relaxed">{item.desc}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EVENTS */}
-      <section id="events" className="py-24 px-6 relative bg-secondary">
-        <div className="max-w-7xl mx-auto relative">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-4">
-            <div>
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm">Where We're At</p>
-              <h2 className="text-4xl md:text-6xl mt-3">This week on <span className="font-script text-primary font-normal">Oahu</span></h2>
-            </div>
-            <a href="https://www.instagram.com/kababamama.hawaii" target="_blank" rel="noreferrer"
-               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition">
-              <Instagram className="w-5 h-5" /> <span className="font-semibold">Latest schedule on IG</span>
-            </a>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {events.map((e, i) => (
-              <a key={i} href={e.link} target="_blank" rel="noreferrer"
-                 className="group bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-warm transition-all hover:-translate-y-1 text-foreground flex flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={e.img} alt={e.location} loading="lazy" width={1024} height={768}
-                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute top-3 left-3 bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-soft">
-                    {e.day}
-                  </div>
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-lg font-extrabold leading-tight group-hover:text-primary transition">{e.location}</h3>
-                  <p className="text-muted-foreground text-sm mt-2 flex items-start gap-2">
-                    <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" /> {e.address}
-                  </p>
-                  <p className="text-foreground text-sm mt-2 flex items-center gap-2 font-semibold">
-                    <Clock className="w-4 h-4 text-primary" /> {e.time}
-                  </p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STORY */}
-      <section id="story" className="py-24 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="relative h-[460px] sm:h-[520px] md:h-[560px] flex items-center justify-center">
-            {/* tape strips */}
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-accent/40 rotate-[-4deg] z-30 rounded-sm shadow-soft" aria-hidden />
-            {storyPhotos.map((photo, i) => {
-              const offset = (i - storyIdx + storyPhotos.length) % storyPhotos.length;
-              const isTop = offset === 0;
-              const z = storyPhotos.length - offset;
-              const translateY = offset * 6;
-              const translateX = offset * 4;
-              const scale = 1 - offset * 0.04;
-              return (
-                <figure
-                  key={i}
-                  className="absolute bg-card p-3 pb-12 rounded-sm shadow-warm transition-all duration-700 ease-out w-[78%] sm:w-[70%] max-w-[420px]"
-                  style={{
-                    transform: `translate(${translateX}px, ${translateY}px) rotate(${photo.rotate}deg) scale(${scale})`,
-                    zIndex: z,
-                    opacity: offset > 3 ? 0 : 1,
-                  }}
-                >
-                  <img
-                    src={photo.src}
-                    alt={photo.caption}
-                    loading="lazy"
-                    className="w-full aspect-[4/5] object-cover"
-                  />
-                  <figcaption className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-foreground">
-                    {photo.caption}
-                  </figcaption>
-                </figure>
-              );
-            })}
-            <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-primary text-primary-foreground rounded-2xl px-5 py-3 shadow-warm z-40 rotate-[-4deg]">
-              <p className="font-script text-2xl leading-none">Jon & Lana</p>
-              <p className="text-xs opacity-90">Owners & cooks</p>
-            </div>
-          </div>
-          <div>
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm">Our Story</p>
-            <h2 className="text-4xl md:text-5xl mt-3">Every family has a dish worth sharing. <span className="font-script text-primary font-normal">We built a truck for ours.</span></h2>
-            <div className="mt-6 space-y-5 text-muted-foreground text-lg leading-relaxed">
-              <p>
-                After we were both impacted by layoffs. Instead of starting over we decided to bring the Mediterranean flavors we grew up loving around the island of Oahu.
-              </p>
-              <p>
-                After three years of pop-ups, late nights, and serving thousands we finally hit the road in a <span className="text-foreground font-semibold">newly renovated truck</span>.
-              </p>
-              <p className="flex items-center gap-2 text-primary font-semibold">
-                <Heart className="w-5 h-5 fill-primary" /> Mahalo Oahu for showing up. We're just getting started.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA / CONTACT */}
-      <section id="contact" className="px-6 pb-24">
-        <div className="max-w-6xl mx-auto bg-primary rounded-3xl overflow-hidden text-primary-foreground shadow-soft relative grid md:grid-cols-2">
-          <div className="aspect-[4/3] md:aspect-auto md:order-2">
-            <img src={cateringTruck} alt="Kababa Mama food truck lit up at night with red umbrella and string lights"
-                 loading="lazy" width={1100} height={820}
-                 className="w-full h-full object-cover" />
-          </div>
-          <div className="p-10 md:p-14 text-center md:text-left md:order-1">
-          <ChefHat className="w-12 h-12 mx-auto md:mx-0 opacity-90" />
-          <h2 className="text-4xl md:text-5xl mt-4">Catering, private events, and parties</h2>
-          <p className="mt-4 text-lg opacity-95 max-w-2xl mx-auto">
-            Bring the truck to your wedding, birthday, or company day. Drop us a line and we'll make it happen.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="rounded-full h-14 px-8 bg-foreground text-background hover:bg-foreground/90">
-              <a href="mailto:hello@kababamamahawaii.com">Email us</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <a href="https://www.instagram.com/kababamama.hawaii" target="_blank" rel="noreferrer">
-                <Instagram className="w-5 h-5 mr-2" /> DM us on Instagram
-              </a>
-            </Button>
-          </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-border py-10 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <img src={logo} alt="Kababa Mama Hawaii" className="h-12 w-auto" />
-          <p>© {new Date().getFullYear()} — Made with aloha on Oahu 🌺</p>
-        </div>
-      </footer>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kababa Mama Hawaii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="sunset1.png" as="image">
+    <style>
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0 url('image6.png') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+        .logo-container {
+            padding: 5px 0;
+            background: none;
+        }
+        .logo-container a {
+            display: inline-block;
+        }
+        img.logo {
+            max-width: 25%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            background: transparent;
+        }
+        .links {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .links a {
+            color: #FF0000;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .links i {
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        /* New class for grouping Instagram and Contact Us */
+        .links .social-group {
+            display: inline-flex;
+            flex-wrap: nowrap; /* Keeps Instagram and Contact Us on one line */
+            gap: 30px; /* Space between Instagram and Contact Us */
+        }
+        .links .photos-link {
+            display: block; /* Forces Photos to a new line */
+            margin-top: 10px; /* Adds spacing above Photos */
+        }
+        .events {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 10px;
+        }
+        .events h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #000000;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            white-space: nowrap;
+        }
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+            justify-items: center;
+        }
+        .event-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }
+        .event {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: left;
+            transition: transform 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 180px;
+        }
+        .event:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #333;
+        }
+        footer p {
+            margin: 0;
+        }
+        footer a {
+            color: #FF0000;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .event p {
+            font-size: 0.95em;
+            color: #555;
+            margin: 5px 0;
+        }
+        .event p strong {
+            color: #222;
+        }
+        @media (min-width: 768px) {
+            .events-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .event p {
+                font-size: 1em;
+            }
+            .event p.location,
+            .event p.address {
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+            }
+            img.logo {
+                max-width: 30%;
+            }
+        }
+        @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
+            .events h1 {
+                font-size: 2em;
+            }
+            img.logo {
+                max-width: 35%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html"><img src="logo2.png" alt="Kababa Mama Logo" class="logo"></a>
     </div>
-  );
-};
+    <div class="links">
+        <div class="social-group">
+            <a href="https://www.instagram.com/kababamama.hawaii" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+        <a href="photos.html" class="photos-link">
+            <i class="fas fa-camera"></i> Photos
+        </a>
+    </div>
+    <div class="events">
+        <h1>Upcoming Events</h1>
+        <div id="events-list" class="events-grid"></div>
+    </div>
+    <footer>
+        <p>© 2025 Kababa Mama Hawaii | <a href="mailto:kababamamahi@gmail.com">Contact Us</a></p>
+    </footer>
 
-export default Index;
+    <script>
+        fetch('events.json')
+            .then(response => response.json())
+            .then(events => {
+                const eventsList = document.getElementById('events-list');
+                eventsList.innerHTML = '';
+                if (events.length === 0) {
+                    eventsList.innerHTML = '<p>No events found.</p>';
+                } else {
+                    events.forEach(event => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'event';
+                        eventDiv.innerHTML = `
+                            <p><strong>Date:</strong> ${event.date}</p>
+                            <p class="location"><strong>Location:</strong> ${event.location}</p>
+                            <p class="address"><strong>Address:</strong> ${event.address}</p>
+                            <p><strong>Time:</strong> ${event.time}</p>
+                        `;
+                        const eventLink = document.createElement('a');
+                        eventLink.className = 'event-link';
+                        eventLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}`;
+                        eventLink.target = '_blank';
+                        eventLink.appendChild(eventDiv);
+                        eventsList.appendChild(eventLink);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error loading events:', error);
+                document.getElementById('events-list').innerHTML = '<p>Error loading events.</p>';
+            });
+    </script>
+</body>
+</html>
